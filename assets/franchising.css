@@ -22,3 +22,8 @@
         margin-top: 0;
     }
 }
+@media (max-width: 767px) {
+    .franchise-tag {
+        display: none !important;
+    }
+}

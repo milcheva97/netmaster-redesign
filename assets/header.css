@@ -130,3 +130,13 @@
         min-height: calc(100vh - 82px);
     }
 }
+footer .footer-main{display:grid;grid-template-columns:minmax(260px,.9fr) minmax(230px,.7fr) minmax(230px,.6fr);gap:4rem;align-items:start}
+footer .footer-office,footer .footer-navigation{display:flex;flex-direction:column;align-items:flex-start}
+footer .footer-logo .brand img{width:min(330px,100%);height:auto}
+footer .footer-office h3,footer .footer-navigation h3{margin:2rem 0 .8rem;color:#fff;font:500 1.15rem 'DM Sans',sans-serif}
+footer .footer-office h3,footer .footer-navigation h3{margin-top:.35rem}
+footer .footer-office address,footer .footer-navigation>a{margin:0;color:#91a4a9;font-size:.85rem;font-style:normal;line-height:1.9}
+footer .footer-navigation>a:hover,footer .footer-office a:hover,footer .footer-languages a:hover{color:var(--cyan)}
+footer .footer-languages{display:flex;gap:1.6rem;margin-top:1rem;color:#a6b4b8;font-size:.8rem}
+footer .footer-navigation .footer-jobs{margin-top:.8rem;color:#fff;font-size:.95rem}
+@media(max-width:767px){footer .footer-main{grid-template-columns:1fr;gap:1rem}footer .footer-navigation h3{margin-top:1.5rem}}

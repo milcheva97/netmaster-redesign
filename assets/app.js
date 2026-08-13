@@ -20,6 +20,14 @@ document.querySelectorAll('#mainNav a').forEach((link) => {
 });
 
 const locationMap = document.querySelector('#locationMap');
+document.querySelectorAll('footer .footer-main').forEach((footer) => {
+  const en = location.pathname.startsWith('/en');
+  const it = location.pathname.startsWith('/it');
+  const r = en ? {home:'/en',about:'/en/about-us',franchise:'/en/franchising',services:'/en/services',contact:'/en/contact',jobs:'/en/careers'} : it ? {home:'/it',about:'/it/chi-siamo',franchise:'/it/franchising',services:'/it/servizi',contact:'/it/contatti',jobs:'/it/carriere'} : {home:'/',about:'/ueber-uns',franchise:'/franchising',services:'/dienstleistungen',contact:'/kontakt',jobs:'/stellenangebote'};
+  const l = en ? {office:'Head office Zurich',about:'About us',services:'Services',contact:'Contact',jobs:'Careers'} : it ? {office:'Sede principale Zurigo',about:'Chi siamo',services:'Servizi',contact:'Contatti',jobs:'Carriere'} : {office:'Hauptsitz Zürich',about:'Über uns',services:'Dienstleistungen',contact:'Kontakt',jobs:'Stellenangebote'};
+  footer.innerHTML = `<div class="footer-logo"><a class="brand brand-light" href="${r.home}"><img src="/assets/images/logo.png" alt="Netmaster"></a></div><div class="footer-office"><h3>${l.office}</h3><address>Netmaster (Schweiz) AG<br>Zugerstrasse 162<br>CH–8820 Wädenswil<br><a href="mailto:info@netmaster.ch">info@netmaster.ch</a><br><a href="tel:+41445424747">+41 (0) 44 542 47 47</a></address></div><nav class="footer-navigation"><h3>Navigation</h3><a href="${r.home}">Home</a><a href="${r.about}">${l.about}</a><a href="${r.franchise}">Franchising</a><a href="${r.services}">${l.services}</a><a href="${r.contact}">${l.contact}</a><div class="footer-languages"><a href="/it">It</a><a href="/en">En</a><a href="/">De</a></div><a class="footer-jobs" href="${r.jobs}">${l.jobs}</a></nav>`;
+});
+
 const mapDirections = document.querySelector('#mapDirections');
 const locationOptions = document.querySelectorAll('.location-option');
 
@@ -70,6 +78,25 @@ document.querySelectorAll('.nav-item.dropdown').forEach((dropdown) => {
   toggle.href = servicesRoute;
   toggle.addEventListener('click', (event) => {
     event.preventDefault();
+    if (window.matchMedia('(max-width: 991px)').matches) {
+      event.stopPropagation();
+      const menu = dropdown.querySelector(':scope > .dropdown-menu');
+      if (dropdown.classList.contains('show')) {
+        window.location.href = servicesRoute;
+        return;
+      }
+      document.querySelectorAll('#mainNav .nav-item.dropdown.show').forEach((item) => {
+        if (item !== dropdown) {
+          item.classList.remove('show');
+          item.querySelector(':scope > .dropdown-menu')?.classList.remove('show');
+          item.querySelector(':scope > .dropdown-toggle')?.setAttribute('aria-expanded', 'false');
+        }
+      });
+      dropdown.classList.add('show');
+      menu?.classList.add('show');
+      toggle.setAttribute('aria-expanded', 'true');
+      return;
+    }
     event.stopImmediatePropagation();
     window.location.href = servicesRoute;
   }, true);
