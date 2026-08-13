@@ -1,0 +1,24 @@
+.franchise-page{background:#f5f4ef}.section-space{padding:8rem 0}.franchise-hero{height:calc(100vh - 118px);min-height:680px;display:grid;grid-template-columns:1.05fr .95fr;color:#fff;background:var(--navy)}.franchise-hero-copy{display:flex;flex-direction:column;justify-content:center;padding:4rem 4rem 2.5rem max(3rem,calc((100vw - 1240px)/2))}.franchise-hero h1{margin:1.4rem 0 1.8rem;font:600 clamp(4rem,6vw,6.7rem)/.9 'Manrope';letter-spacing:-.075em}.franchise-hero h1 span{color:var(--cyan)}.franchise-hero-copy>p{max-width:670px;color:#b2c1c5;font-size:1.08rem;line-height:1.7}.franchise-actions{display:flex;align-items:center;gap:1.5rem;margin-top:1.5rem}.franchise-actions>a:last-child{padding-bottom:.15rem;border-bottom:1px solid rgba(255,255,255,.5);font-size:.86rem}.franchise-facts{display:flex;gap:3rem;margin-top:auto;padding-top:2rem;border-top:1px solid rgba(255,255,255,.14)}.franchise-facts div{display:flex;flex-direction:column}.franchise-facts strong{color:var(--cyan);font:700 2rem 'Manrope'}.franchise-facts span{color:#8fa4aa;font-size:.72rem}.franchise-hero-media{position:relative;overflow:hidden}.franchise-hero-media img{width:100%;height:100%;object-fit:cover}.franchise-media-overlay{position:absolute;inset:0;background:linear-gradient(90deg,var(--navy),transparent 30%),linear-gradient(0deg,rgba(4,20,27,.65),transparent 45%)}.franchise-tag{position:absolute;right:2rem;bottom:2rem;padding:1.25rem 1.5rem;color:var(--navy);background:var(--lime);border-radius:1rem;font-weight:700;line-height:1.35}.franchise-heading{display:grid;grid-template-columns:1fr 2fr;align-items:end;margin-bottom:4rem}.franchise-heading h2,.sticky-copy h2{margin:0;font:600 clamp(2.8rem,5.5vw,5.2rem)/1 'Manrope';letter-spacing:-.06em}.franchise-system p,.franchise-benefits p{color:var(--muted);line-height:1.75}.franchise-lead{font-size:1.45rem!important;color:var(--ink)!important}.business-tools{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:4rem}.business-tools span{padding:.75rem 1rem;background:#fff;border:1px solid var(--line);border-radius:999px;font-size:.82rem;font-weight:700}.franchise-fit{color:#fff;background:var(--navy)}.sticky-copy{position:sticky;top:3rem}.sticky-copy h2{margin-top:1.5rem}.sticky-copy p{color:#9db0b5;line-height:1.75}.fit-list{border-top:1px solid rgba(255,255,255,.16)}.fit-list article{display:grid;grid-template-columns:55px 1fr;padding:2.2rem 0;border-bottom:1px solid rgba(255,255,255,.16)}.fit-list span{color:var(--cyan);font-size:.72rem}.fit-list h3{font-size:1.55rem}.fit-list p{grid-column:2;color:#9db0b5}.benefit-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);border-left:1px solid var(--line)}.benefit-grid article{min-height:300px;padding:2rem;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.benefit-grid span{color:#168ba0;font-size:.72rem}.benefit-grid h3{margin:5rem 0 1rem;font-size:1.7rem}.franchise-cta{background:var(--cyan)}.cta-panel{display:grid;grid-template-columns:1.2fr .8fr;gap:5rem;align-items:end}.cta-panel .eyebrow{color:var(--navy)}.cta-panel h2{margin:1.5rem 0 0;font:600 clamp(3rem,6vw,5.8rem)/1 'Manrope';letter-spacing:-.065em}.cta-panel p{line-height:1.75}.cta-panel small{display:block;margin-top:1rem}.cta-panel .btn-cyan{background:var(--navy);border-color:var(--navy);color:#fff}@media(max-width:991px){.franchise-hero{height:auto;grid-template-columns:1fr}.franchise-hero-copy{min-height:650px;padding:4rem 1.5rem 2.5rem}.franchise-hero-media{height:520px}.franchise-heading,.cta-panel{grid-template-columns:1fr;gap:1.5rem}.sticky-copy{position:static;margin-bottom:2rem}}@media(max-width:575px){.section-space{padding:5rem 0}.franchise-hero-copy{min-height:620px}.franchise-hero h1{font-size:3.7rem}.franchise-actions{align-items:flex-start;flex-direction:column}.franchise-facts{gap:1.5rem}.franchise-facts strong{font-size:1.5rem}.franchise-hero-media{height:420px}.benefit-grid{grid-template-columns:1fr}.benefit-grid article{min-height:240px}.benefit-grid h3{margin-top:3rem}}
+/* Keep the hero headline and action labels together. */
+.franchise-hero h1 span {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.franchise-actions > a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+@media (min-width: 992px) {
+    .franchise-actions {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .franchise-facts {
+        margin-top: 0;
+    }
+}

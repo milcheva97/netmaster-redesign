@@ -1,0 +1,132 @@
+.site-header {
+    position: sticky !important;
+    top: 0;
+    z-index: 1050;
+    width: 100%;
+    background: rgba(6, 29, 38, .97);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .12);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.header-topbar {
+    padding: .45rem 0 0;
+    color: rgba(255, 255, 255, .62);
+    font-size: .76rem;
+}
+
+.header-topbar a {
+    transition: color .2s ease;
+}
+
+.header-topbar a:hover {
+    color: var(--cyan);
+}
+
+.site-header .navbar {
+    padding-top: .85rem;
+    padding-bottom: 1.1rem;
+}
+
+.site-header .nav-link {
+    padding: .65rem .8rem !important;
+    white-space: nowrap;
+}
+
+.site-header .navbar-nav .nav-link.active,
+.site-header .navbar-nav .nav-link.show {
+    color: rgba(255, 255, 255, .76);
+}
+
+.site-header .navbar-nav .nav-link.active:hover,
+.site-header .navbar-nav .nav-link.show:hover {
+    color: #fff;
+}
+
+.site-header .dropdown-menu {
+    min-width: 220px;
+    margin-top: .65rem;
+    padding: .55rem;
+    background: rgba(8, 34, 43, .98);
+    border: 1px solid rgba(255, 255, 255, .13);
+    border-radius: .8rem;
+    box-shadow: 0 22px 50px rgba(0, 0, 0, .28);
+}
+
+.site-header .dropdown-menu::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -.8rem;
+    height: .8rem;
+}
+
+.site-header .dropdown-item {
+    padding: .7rem .8rem;
+    color: rgba(255, 255, 255, .78);
+    border-radius: .5rem;
+    font-size: .9rem;
+}
+
+.site-header .dropdown-item:hover,
+.site-header .dropdown-item:focus,
+.site-header .dropdown-item.active {
+    color: var(--navy);
+    background: var(--cyan);
+}
+
+.site-header .login-button {
+    padding: .7rem 1.4rem;
+    border-radius: .7rem;
+}
+
+/* Header is 118px high on desktop: keep header + hero within one viewport. */
+.hero {
+    height: calc(100vh - 118px);
+}
+
+@media (min-width: 992px) {
+    .site-header .dropdown:hover > .dropdown-menu,
+    .site-header .dropdown:focus-within > .dropdown-menu,
+    .site-header .dropdown-menu:hover {
+        display: block;
+    }
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+    .brand img {
+        width: 250px;
+    }
+
+    .site-header .nav-link {
+        padding-inline: .5rem !important;
+        font-size: .84rem;
+    }
+}
+
+@media (max-width: 991px) {
+    .header-topbar {
+        display: none;
+    }
+
+    .site-header .navbar {
+        padding: 1rem 0;
+    }
+
+    .site-header .dropdown-menu {
+        margin: .25rem 0 .75rem;
+        border: 0;
+        box-shadow: none;
+    }
+
+    .site-header .login-button {
+        display: inline-block;
+        margin-top: .5rem;
+    }
+
+    .hero {
+        height: auto;
+        min-height: calc(100vh - 82px);
+    }
+}

@@ -1,0 +1,46 @@
+/* Unified full-width image heroes for About, Franchising and service pages. */
+.about-hero-shell,.franchise-hero,.marketing-hero,.sales-hero,.call-hero,.jobs-hero{position:relative;display:block;isolation:isolate;overflow:hidden;background:var(--navy)}
+.about-hero-copy,.franchise-hero-copy,.marketing-hero-copy,.sales-hero-copy,.call-copy,.jobs-copy{position:relative;z-index:4;width:min(760px,58vw);height:100%;min-height:0}
+.about-hero .about-hero-image,.franchise-hero-media,.marketing-hero-media,.sales-hero-media,.call-media,.jobs-media{position:absolute;z-index:1;inset:0;width:100%;height:100%;min-height:0}
+.about-hero .about-hero-image img,.franchise-hero-media img,.marketing-hero-media img,.sales-hero-media img,.call-media img,.jobs-media img{width:100%;height:100%;object-fit:cover;object-position:center}
+.about-image-shade,.franchise-media-overlay,.marketing-hero-overlay,.sales-hero-overlay,.call-overlay,.jobs-overlay{display:block;position:absolute;z-index:2;inset:0;background:linear-gradient(90deg,rgba(4,24,31,.96) 0%,rgba(4,24,31,.84) 34%,rgba(4,24,31,.48) 58%,rgba(4,24,31,.08) 100%),linear-gradient(0deg,rgba(4,20,27,.4),transparent 55%)}
+.about-grid,.marketing-hero-grid,.sales-hero-grid,.call-grid,.jobs-grid{z-index:3;inset:0 48% 0 0}
+.about-experience,.about-image-caption,.franchise-tag,.marketing-signal,.sales-hero-badge,.call-live,.jobs-badge{z-index:5}
+.sales-hero-actions .btn{display:inline-flex;align-items:center;justify-content:center;white-space:nowrap}
+.sales-hero-actions{margin-top:1.25rem;margin-bottom:1.25rem}
+.sales-metrics{margin-top:0}
+.call-hero .call-media>img{transform:scaleX(-1)}
+
+@media(min-width:992px){
+  .marketing-hero-copy,.sales-hero-copy,.call-copy,.jobs-copy{width:min(820px,63vw);justify-content:center;padding-top:3.5rem;padding-right:3rem;padding-bottom:2.5rem}
+  .marketing-hero h1,.sales-hero h1,.call-hero h1,.jobs-hero h1{max-width:780px;margin:1.15rem 0 1.35rem;font-size:clamp(3.6rem,4.8vw,5.5rem);line-height:1.03;letter-spacing:-.055em;text-wrap:balance}
+  .marketing-hero h1 br,.sales-hero h1 br,.call-hero h1 br,.jobs-hero h1 br{display:none}
+  .marketing-hero h1 span,.sales-hero h1 span,.call-hero h1 span,.jobs-hero h1 span{display:block;margin-top:.08em}
+  .marketing-hero h1{font-size:clamp(3.8rem,5vw,5.9rem);white-space:nowrap}
+  .marketing-hero h1 br{display:block}
+  .marketing-hero h1 span{white-space:nowrap}
+  .sales-hero h1{font-size:clamp(3.35rem,4.35vw,5.15rem);white-space:nowrap}
+  .sales-hero h1 br{display:block}
+  .sales-hero h1 span{white-space:normal}
+  .sales-hero h1 span br{display:block}
+  .marketing-hero-copy{justify-content:center}
+  .marketing-hero h1{margin-top:1.65rem;margin-bottom:1.85rem}
+  .marketing-hero-copy>p{margin-bottom:.5rem}
+  .marketing-hero-actions{margin-top:1.65rem;margin-bottom:0}
+  .marketing-tags{margin-top:1.65rem}
+  .marketing-hero-copy{display:grid;height:100%;align-content:space-evenly;justify-content:stretch;padding-top:1.5rem;padding-bottom:1.5rem}
+  .marketing-hero h1,.marketing-hero-copy>p,.marketing-hero-actions,.marketing-tags{margin-top:0;margin-bottom:0}
+  .marketing-hero-copy>p,.sales-hero-copy>p,.call-copy>p,.jobs-copy>p{max-width:620px;font-size:1.02rem;line-height:1.65}
+}
+
+@media(max-width:991px){
+  .about-hero,.franchise-hero,.marketing-hero,.sales-hero,.call-hero,.jobs-hero{height:calc(100vh - 94px);min-height:680px}
+  .about-hero-shell{height:100%;min-height:0}
+  .about-hero-copy,.franchise-hero-copy,.marketing-hero-copy,.sales-hero-copy,.call-copy,.jobs-copy{width:min(720px,100%);height:100%;min-height:0;padding:4rem 1.5rem 2.5rem}
+  .about-hero .about-hero-image,.franchise-hero-media,.marketing-hero-media,.sales-hero-media,.call-media,.jobs-media{height:100%;min-height:0}
+}
+@media(max-width:575px){
+  .about-hero-copy,.franchise-hero-copy,.marketing-hero-copy,.sales-hero-copy,.call-copy,.jobs-copy{padding:3rem 1.25rem 1.5rem}
+  .about-image-caption{display:none}
+  .about-experience,.franchise-tag,.marketing-signal,.sales-hero-badge,.call-live,.jobs-badge{right:1rem;bottom:1rem;top:auto}
+}

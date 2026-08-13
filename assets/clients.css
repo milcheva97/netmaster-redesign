@@ -1,0 +1,299 @@
+.hero-experience {
+    display: flex;
+    align-items: center;
+    gap: .85rem;
+    width: max-content;
+    margin: 2rem 0 -1.75rem auto;
+    padding: .75rem 1.15rem;
+    color: var(--navy);
+    background: var(--lime);
+    border-radius: .9rem;
+}
+
+.hero-experience strong {
+    font: 700 2rem/1 'Manrope', sans-serif;
+}
+
+.hero-experience span {
+    max-width: 85px;
+    font-size: .76rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.hero-client-slider {
+    position: relative;
+    width: 100%;
+    height: 158px;
+    margin-top: 3rem;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 18px 55px rgba(0, 0, 0, .18);
+}
+
+.hero-client-slider::before,
+.hero-client-slider::after {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    bottom: 0;
+    width: 70px;
+    pointer-events: none;
+}
+
+.hero-client-slider::before { left: 0; background: linear-gradient(90deg, #fff, transparent); }
+.hero-client-slider::after { right: 0; background: linear-gradient(-90deg, #fff, transparent); }
+
+.hero-client-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    height: 100%;
+    animation: heroLogoScroll 32s linear infinite;
+}
+
+.hero-client-slider:hover .hero-client-track { animation-play-state: paused; }
+
+.hero-client-logo {
+    width: 235px;
+    height: 100%;
+    flex: 0 0 235px;
+    display: grid;
+    place-items: center;
+    padding: 1.5rem 2rem;
+}
+
+.hero-client-logo img {
+    display: block;
+    max-width: 100%;
+    max-height: 78px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+@keyframes heroLogoScroll {
+    to { transform: translateX(-50%); }
+}
+
+@media (max-width: 575px) {
+    .hero-experience { margin: 1.75rem 0 -1.5rem auto; }
+    .hero-client-slider { height: 130px; margin-top: 2.5rem; }
+    .hero-client-logo { width: 190px; flex-basis: 190px; padding: 1.25rem; }
+    .hero-client-logo img { max-height: 62px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-client-track { animation-play-state: paused; }
+}
+
+.clients-section {
+    padding: 6.5rem 0;
+    color: #fff;
+    background: #071c24;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+}
+
+.clients-intro {
+    display: grid;
+    grid-template-columns: 1.6fr .8fr;
+    gap: 5rem;
+    align-items: end;
+    margin-bottom: 3.5rem;
+}
+
+.clients-intro h2 {
+    margin: 1.25rem 0 0;
+    font: 600 clamp(2.8rem, 5.5vw, 5rem)/1 'Manrope', sans-serif;
+    letter-spacing: -.06em;
+}
+
+.clients-intro h2 span {
+    color: var(--cyan);
+}
+
+.clients-intro p {
+    margin: 0;
+    color: #9db0b5;
+    line-height: 1.75;
+}
+
+.client-logos {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    border-top: 1px solid rgba(255, 255, 255, .13);
+    border-left: 1px solid rgba(255, 255, 255, .13);
+}
+
+.client-logo {
+    position: relative;
+    min-height: 150px;
+    display: grid;
+    place-items: center;
+    padding: 1.6rem;
+    background: #fff;
+    border-right: 1px solid rgba(255, 255, 255, .13);
+    border-bottom: 1px solid rgba(255, 255, 255, .13);
+    transition: background .3s ease, transform .3s ease;
+}
+
+.client-logo::after {
+    content: '';
+    position: absolute;
+    right: .8rem;
+    top: .8rem;
+    width: 5px;
+    height: 5px;
+    background: var(--cyan);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+.client-logo:hover {
+    z-index: 1;
+    background: var(--ice);
+    transform: translateY(-5px);
+}
+
+.client-logo:hover::after {
+    opacity: 1;
+}
+
+.client-logo img {
+    display: block;
+    max-width: 100%;
+    max-height: 65px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    mix-blend-mode: normal;
+    filter: none;
+    opacity: 1;
+    transition: transform .3s ease;
+}
+
+.client-logo:hover img {
+    transform: scale(1.04);
+}
+
+@media (max-width: 1199px) {
+    .client-logos {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .clients-section {
+        padding: 5rem 0;
+    }
+
+    .clients-intro {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .client-logos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .client-logo {
+        min-height: 125px;
+        padding: 1.25rem;
+    }
+}
+
+/* Continuous partner-logo slider */
+.client-slider {
+    position: relative;
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    padding: 1rem 0;
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, .18);
+}
+
+.client-slider::before,
+.client-slider::after {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    bottom: 0;
+    width: 90px;
+    pointer-events: none;
+}
+
+.client-slider::before {
+    left: 0;
+    background: linear-gradient(90deg, #fff, transparent);
+}
+
+.client-slider::after {
+    right: 0;
+    background: linear-gradient(-90deg, #fff, transparent);
+}
+
+.client-track {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    width: max-content;
+    animation: clientMarquee 38s linear infinite;
+}
+
+.client-slider:hover .client-track {
+    animation-play-state: paused;
+}
+
+.client-slide {
+    flex: 0 0 220px;
+    height: 125px;
+    display: grid;
+    place-items: center;
+    padding: 1.5rem 2rem;
+    background: #fff;
+}
+
+.client-slide img {
+    display: block;
+    max-width: 175px;
+    max-height: 72px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+@keyframes clientMarquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+}
+
+@media (max-width: 767px) {
+    .client-slider::before,
+    .client-slider::after {
+        width: 42px;
+    }
+
+    .client-slide {
+        flex-basis: 170px;
+        height: 105px;
+        padding: 1.25rem;
+    }
+
+    .client-slide img {
+        max-width: 140px;
+        max-height: 60px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .client-track {
+        animation-play-state: paused;
+    }
+}
